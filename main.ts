@@ -5,12 +5,14 @@ namespace SpriteKind {
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     player2.vy = -200
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    player1.setPosition(8, 10)
-    player2.setPosition(8, 54)
-})
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     player1.vy = -200
+})
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    player1.setPosition(8, 10)
+})
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    player2.setPosition(8, 54)
 })
 let player2: Sprite = null
 let player1: Sprite = null
