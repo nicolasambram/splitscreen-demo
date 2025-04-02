@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "arcade-split-screen": "github:riknoll/arcade-split-screen#c932ef6b9f21320f2b6307dc01c75bbd8179b278"
+        "arcade-split-screen": "github:riknoll/arcade-split-screen#v0.0.3"
     },
     "files": [
         "main.blocks",

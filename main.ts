@@ -14,6 +14,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Press
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     player2.setPosition(8, 54)
 })
+let mySprite: Sprite = null
 let player2: Sprite = null
 let player1: Sprite = null
 scene.setBackgroundImage(img`
@@ -140,6 +141,27 @@ scene.setBackgroundImage(img`
     `)
 tiles.setCurrentTilemap(tilemap`level2`)
 player1 = sprites.create(img`
+    . . . . . . . . . . b 2 b . . . 
+    . . . . . . . . . b 2 b . . . . 
+    . . . . . . . . . b c . . . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 2 2 2 2 2 b . . . 
+    . . . . b b 2 d 1 f 2 2 d f . . 
+    . . . . b 2 2 1 f f 2 d 4 c . . 
+    . . . . b 2 2 d f b d d 4 4 . . 
+    b d d d b b d 2 2 2 4 4 4 4 4 b 
+    b b d 2 2 2 b 2 2 4 4 4 4 4 b . 
+    b d c 2 2 2 2 d 2 2 2 2 2 b . . 
+    c d d c d 2 2 b 2 2 2 2 2 2 b . 
+    c b d d c c b 2 2 2 2 2 2 2 b . 
+    . c d d d d d d 2 2 2 2 2 d b . 
+    . . c b d d d d d 2 2 2 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.a)
+player1.setPosition(8, 10)
+controller.player1.moveSprite(player1, 100, 0)
+player1.ay = 500
+player2 = sprites.create(img`
     . . . . . . . . . . b 5 b . . . 
     . . . . . . . . . b 5 b . . . . 
     . . . . . . . . . b c . . . . . 
@@ -157,10 +179,10 @@ player1 = sprites.create(img`
     . . c b d d d d d 5 5 5 b b . . 
     . . . c c c c c c c c b b . . . 
     `, SpriteKind.a)
-player1.setPosition(8, 10)
-controller.player1.moveSprite(player1, 100, 0)
-player1.ay = 500
-player2 = sprites.create(img`
+player2.setPosition(8, 10)
+controller.player1.moveSprite(player2, 100, 0)
+player2.ay = 500
+let player3 = sprites.create(img`
     . . . . . . . . . . b 7 b . . . 
     . . . . . . . . . b 7 b . . . . 
     . . . . . . . . . b c . . . . . 
@@ -178,8 +200,10 @@ player2 = sprites.create(img`
     . . c b 6 6 6 6 6 7 7 7 b b . . 
     . . . c c c c c c c c b b . . . 
     `, SpriteKind.b)
-player2.ay = 500
-player2.setPosition(8, 54)
-scene.cameraFollowSprite(player1)
-controller.player2.moveSprite(player2, 100, 0)
-splitScreen.splitScreenCameraFollow(player2)
+player3.ay = 500
+player3.setPosition(8, 54)
+controller.player2.moveSprite(player3, 100, 0)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, player1)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, player2)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, player3)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, mySprite)
