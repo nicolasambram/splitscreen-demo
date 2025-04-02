@@ -30,7 +30,7 @@
             "sprites.builtin.oceanSand4",
             "sprites.builtin.oceanSand2"
         ],
-        "displayName": "level2"
+        "displayName": "nivel1"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",
